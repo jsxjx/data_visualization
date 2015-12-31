@@ -1,14 +1,19 @@
-// This file contains the JavaScript code that renders the chart.
 /**
- * This function is called by /demo/home.html template and receives a JSON object.
- * Data parameter contains CV, DV and Ion Current parsed data needed to plot the 3D Scatter Plot.
- * These JSON data equals to X-axis values, Y-axis values and Z-axis values.
- * Uses HighChart APIs to plot the data.
+ * This function is called by /highcharts/home.html template and receives a JSON object.
+ * Data parameter contains CV, DV, Ion Current, Min Ion Current and Max Ion Current parsed data needed to plot the
+ * 3D Scatter Plot.
  *
- * Now displays a dummy plot from HighCharts examples. But real data is accessible with:
+ * These JSON data equals to x-axis values, y-axis values, grid-data values, minimum z-axis value, maximum z-axis value.
+ * Grid-data values is a list of lists comprised of x-axis value, z-axis values and row index.
+ *
+ * Uses HighChart 3D Scatter Plot APIs to plot the data.
+ *
  * data['x_cv']
  * data['y_dv']
- * data['z_ic'][0] to data['z_ic][(data['y_dv'].length)-1]
+ * data['grid_data']
+ * data['z_min']
+ * data['z_max']
+ *
  * @param data
  */
 function render_chart(data) {
