@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Error Page{% endblock %}
+
+{% block body_block %}
+    <p>WOOOOOOPS!!</p>
+    <p>Error 404</p>
+    <p><a href="{% url 'highcharts:home' %}">Back to the homepage</a></p>
+{% endblock %}
+

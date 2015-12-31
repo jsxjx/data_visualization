@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Demo{% endblock %}
+
+{% block body_block %}
+    <div class="page-header">
+        <h1>3D Scatter Plot</h1>
+    </div>
+
+    <p>This is a Proof of Concept of 3D Scatter Plot loading a CSV file and using
+        <a href="http://www.highcharts.com" target="_blank"> HighCharts</a> APIs.<br>
+    </p>
+
+    <form role="form" id="fingerprint_form" method="post" action="{% url 'highcharts:home' %}">
+        {% csrf_token %}
+        {{ form_fingerprint.title.label }}
+        {{ form_fingerprint.title }}
+        {{ form_fingerprint.title.errors }}
+        {{ form_fingerprint.file.label }}
+        {{ form_fingerprint.file }}
+        {{ form_fingerprint.file.errors }}
+        <button class="btn btn-primary" type="submit" name="submit" formenctype="multipart/form-data">Load CSV</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            var view_path = "{% url 'highcharts:chart_data_json' csvfile_name %}";
+            $.getJSON(view_path, function (data) {
+                render_chart(data);
+            });
+        });
+    </script>
+
+    <br><br>
+    <div id="container" style="height: 400px;"></div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Owlstone</title>
+
+    <!-- JavaScript - jQuery, local-->
+    <script src="{% static 'js/jquery.min.js' %} "></script>
+    <script src="{% static 'js/render_highchart.js' %}"></script>
+
+    <!-- CSS Bootstrap, local-->
+    <link href="{% static 'css/highcharts-main.css'  %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+    </header>
+
+    <section id="content">
+        {% block body_block %}
+        {% endblock %}
+    </section>
+
+    <footer>
+    </footer>
+
+    <!-- JavaScript - HighCharts, Bootstrap -->
+    <script src="{% static 'js/highcharts.js' %}"></script>
+    <script src="{% static 'js/highcharts-3d.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

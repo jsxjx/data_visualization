@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Logs
+logs/
+
+# Sqlite3 DB
+*.sqlite3
+
+# Migrations
+migrations/
+migrations/*
+
+# Media Fingerprint
+
+# Unknown
+.idea/*
